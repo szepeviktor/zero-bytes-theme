@@ -1,13 +1,16 @@
 <?php
 
+// Create screenshot command
 // convert -size 1200x900 xc:transparent screenshot.png
+
+/*
 
 // Remove theme_support features
 add_action('after_setup_theme', static function () {
     remove_theme_support('core-block-patterns');
     remove_theme_support('widgets-block-editor');
 });
-// Remove default filters
+// Remove default wp_head items
 remove_action('wp_head', 'feed_links', 2);
 remove_action('wp_head', 'feed_links_extra', 3);
 remove_action('wp_head', 'wp_generator');
@@ -26,3 +29,5 @@ remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
 remove_action('wp_enqueue_scripts', 'wp_common_block_scripts_and_styles');
 remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
 remove_action('wp_footer', 'wp_enqueue_global_styles', 1);
+
+*/
