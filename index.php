@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>" />
+        <meta charset="<?php bloginfo('charset'); ?>" />
         <title><?php wp_title(); ?></title>
         <!-- wp_head --><?php wp_head(); ?><!-- /wp_head -->
     </head>
