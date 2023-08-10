@@ -26,9 +26,11 @@ if (defined('WP_DEBUG') && WP_DEBUG) {
     remove_action('wp_print_styles', 'print_emoji_styles');
     remove_action('wp_head', 'wp_resource_hints', 2);
 
-    // Disable global styles
+    // Remove global styles (FSE)
     remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
-    remove_action('wp_enqueue_scripts', 'wp_common_block_scripts_and_styles');
     remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
     remove_action('wp_footer', 'wp_enqueue_global_styles', 1);
+
+    // Remove block scripts and styles (Gutenberg)
+    remove_action('wp_enqueue_scripts', 'wp_common_block_scripts_and_styles');
 }
