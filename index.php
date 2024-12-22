@@ -12,6 +12,7 @@ if (defined('WP_DEBUG') && WP_DEBUG) :
     <!-- wp_head --><?php wp_head(); ?><!-- /wp_head -->
 </head>
 <body <?php body_class(); ?>>
+    <!-- wp_body_open --><?php wp_body_open(); ?><!-- /wp_body_open -->
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     </article>
     <!-- wp_footer --><?php wp_footer(); ?><!-- /wp_footer -->
