@@ -6,6 +6,7 @@
 if (defined('WP_DEBUG') && WP_DEBUG) {
     // Remove theme_support features
     add_action('after_setup_theme', static function () {
+        // List all features: var_export(array_keys(get_registered_theme_features()));
         remove_theme_support('core-block-patterns');
         remove_theme_support('widgets-block-editor');
     });
@@ -20,6 +21,8 @@ if (defined('WP_DEBUG') && WP_DEBUG) {
     remove_action('wp_head', 'rest_output_link_wp_head', 10);
     remove_action('wp_head', 'rsd_link');
     remove_action('wp_head', 'wp_oembed_add_discovery_links');
+    remove_action('wp_head', 'wp_custom_css_cb', 101);
+    remove_action('wp_head', 'wp_print_auto_sizes_contain_css_fix', 1);
 
     // Disable emojis
     remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -38,9 +41,6 @@ if (defined('WP_DEBUG') && WP_DEBUG) {
     remove_action('wp_enqueue_scripts', 'wp_enqueue_classic_theme_styles');
     remove_action('wp_head', 'wp_maybe_inline_styles', 1);
     remove_action('wp_footer', 'wp_maybe_inline_styles', 1);
-
-    // Remove CSS rule to fix images
-    remove_action('wp_head', 'wp_print_auto_sizes_contain_css_fix', 1);
 
     // Do not show admin bar
     add_filter('show_admin_bar', '__return_false', 100, 1);
