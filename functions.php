@@ -33,4 +33,15 @@ if (defined('WP_DEBUG') && WP_DEBUG) {
 
     // Remove block scripts and styles (Gutenberg)
     remove_action('wp_enqueue_scripts', 'wp_common_block_scripts_and_styles');
+
+    // Remove stylesheet for classic themes
+    remove_action('wp_enqueue_scripts', 'wp_enqueue_classic_theme_styles');
+    remove_action('wp_head', 'wp_maybe_inline_styles', 1);
+    remove_action('wp_footer', 'wp_maybe_inline_styles', 1);
+
+    // Do not show admin bar
+    add_filter('show_admin_bar', '__return_false', 100, 1);
+
+    // Do not add robots meta
+    add_filter('wp_robots', '__return_empty_array', 100, 1);
 }
