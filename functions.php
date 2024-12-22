@@ -39,6 +39,9 @@ if (defined('WP_DEBUG') && WP_DEBUG) {
     remove_action('wp_head', 'wp_maybe_inline_styles', 1);
     remove_action('wp_footer', 'wp_maybe_inline_styles', 1);
 
+    // Remove CSS rule to fix images
+    remove_action('wp_head', 'wp_print_auto_sizes_contain_css_fix', 1);
+
     // Do not show admin bar
     add_filter('show_admin_bar', '__return_false', 100, 1);
 
