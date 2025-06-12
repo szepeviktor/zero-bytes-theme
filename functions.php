@@ -22,7 +22,7 @@ if (defined('WP_DEBUG') && WP_DEBUG) {
     remove_action('wp_head', 'rsd_link');
     remove_action('wp_head', 'wp_oembed_add_discovery_links');
     remove_action('wp_head', 'wp_custom_css_cb', 101);
-    remove_action('wp_head', 'wp_print_auto_sizes_contain_css_fix', 1);
+    add_filter('wp_img_tag_add_auto_sizes', '__return_false');
 
     // Disable emojis
     remove_action('wp_head', 'print_emoji_detection_script', 7);
